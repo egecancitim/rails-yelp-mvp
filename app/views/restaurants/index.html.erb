@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<h1>Restaurants</h1>
+<div class="container">
+
+  <table>
+    <thead class="headers">
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Category</th>
+        <th>Phone Number</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+
+    <tbody class="list">
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td><%= link_to restaurant.name, restaurant %></td>
+          <td><%= restaurant.address %></td>
+          <td><%= restaurant.category %></td>
+          <td><%= restaurant.phone_number %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+</div>
+<div class="backlink">
+  <%= link_to new_restaurant_path do%>
+  <i class="fas fa-plus"></i>
+  <% end %>
+</div>
+
